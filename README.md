@@ -1,6 +1,6 @@
 Sainsbury's Webpage Scraper
 =============================
-This application connects to http://hiring-tests.s3-website-eu-west-1.amazonaws.com/2015_Developer_Scrape/5_products.html and prints a JSON string to stdout with details of the listed products. It relies on XPath (https://en.wikipedia.org/wiki/XPath) to locate elements on the webpage and hence any changes to the webpage's layout may break the application. For each product it retrieves the title, description, unit price and size of the product's individual webpage (which can be reached through the link above).
+This application connects to http://hiring-tests.s3-website-eu-west-1.amazonaws.com/2015_Developer_Scrape/5_products.html and prints a JSON string to stdout with details of the listed products. It relies on **XPath** (https://en.wikipedia.org/wiki/XPath) to locate elements on the webpage and hence any changes to the webpage's layout may break the application. For each product it retrieves the title, description, unit price and size of the product's individual webpage (which can be reached through the link above).
 
 Example usage
 -------------
@@ -70,15 +70,15 @@ After installing Python, verify that it is installed correctly and added to your
     Python 2.7.12
 
 Next, install the following packages:
-* lxml (http://lxml.de/)
-* requests (http://docs.python-requests.org/en/master/)
+* **lxml** (http://lxml.de/)
+* **requests** (http://docs.python-requests.org/en/master/)
 
 The best way to install packages is by first installing pip (https://pypi.python.org/pypi/pip). On Linux for e.g. installing Python packages with pip is as simple as:
  
     $ sudo pip install lxml
 	$ sudo pip install requests
 
-Note that the lxml package relies on certain libraries to be installed on the OS; see http://lxml.de/installation.html for more details.
+Note that the lxml package relies on certain libraries to be installed on the OS. See http://lxml.de/installation.html for more details.
 
 Running
 -------
@@ -109,14 +109,14 @@ If the output looks like this:
 			"total": "0"
 		}
 and there are no error messages, that means that either:
-		* There are no products listed on the webpage, nothing to worry about.
-		* There are products listed but their details could not be retrieved. In this case there will definitely be error/warning messages displayed before the output.
+* There are no products listed on the webpage, nothing to worry about.
+* There are products listed but their details could not be retrieved. In this case there will definitely be error/warning messages displayed before the output.
 
 Errors/Warning messages are displayed in the following format:
 
     [{ERROR | WARNING} {FILENAME}: {LINE_NUMBER} - {FUNCTION_NAME}] MESSAGE
 		
-**  XPath expression failed**
+**XPath expression failed**
 
 			[ERROR    sainsburys_webpage_scraper.py: 194 - get_product_link_element ] XPath expression failed
 
