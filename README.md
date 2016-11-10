@@ -108,7 +108,7 @@ If the output looks like this:
 			"results": [],
 			"total": "0"
 		}
-and there are no error messages, that means that either:
+that means that either:
 * There are no products listed on the webpage, nothing to worry about.
 * There are products listed but their details could not be retrieved. In this case there will definitely be error/warning messages displayed before the output.
 
@@ -120,7 +120,7 @@ Errors/Warning messages are displayed in the following format:
 
 			[ERROR    sainsburys_webpage_scraper.py: 194 - get_product_link_element ] XPath expression failed
 
-This error means that the XPath expression used to reach a certain element withing the tree did not yield any results. This most definitely means a change was made to the layout of the website or to the identifiers of certain elements. If that is the case then the webpage needs to be studied and changes need to be made to sainsburys_webpage_scraper.py
+This error means that the XPath expression used to reach a certain element within the tree did not yield any results. This most definitely means a change was made to the layout of the website or to the identifiers of certain elements. If that is the case then the webpage needs to be studied and changes need to be made to sainsburys_webpage_scraper.py
 
 The first thing to do is to go to the line number (e.g. 194 above) and make changes to the string passed into the .xpath() method immediately above the line where the error message is pointing to. 
 
@@ -138,4 +138,4 @@ This error message means that an HTTP request failed for some reason. The most c
 
 Note: The main URL is defined at the top of sainsburys_webpage_scraper.py (RIPE_FRUITS_URL = ...). If connection failed for this URL then the resulting JSON string will be empty as the main page is crucial. If connection failed for one of the embedded links (there will be one link per product) then the product will be skipped (and warning message issued as mentioned in previous point).
 
-Other errors that may be displayed would mostly be a result of the errors above, in particular the "XPath expression failed" error.
+Other errors that may be displayed would mostly be a result of the errors above, in particular the "XPath expression failed" error. Those would be specific errors detailing exactly which field couldn't be retrieved as a result of failure.
