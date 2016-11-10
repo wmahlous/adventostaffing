@@ -54,7 +54,7 @@ This application connects to http://hiring-tests.s3-website-eu-west-1.amazonaws.
 	}
 	$ 
 
-######Dependencies & Installation:
+######Dependencies & Installation\:
 	- **OS:**
 		This application is OS independent, as long as a Python interpreter is installed.
 	- **Python:**
@@ -74,7 +74,7 @@ This application connects to http://hiring-tests.s3-website-eu-west-1.amazonaws.
 
 		Note that the lxml package relies on certain libraries to be installed on the OS; see http://lxml.de/installation.html for more details.
 
-######Running:
+######Running\:
 	To run the application, simply type:
 		$ python sainsburys_webpage_scraper.py
 	in your console and the JSON string will be printed.
@@ -90,7 +90,7 @@ This application connects to http://hiring-tests.s3-website-eu-west-1.amazonaws.
 		OK
 		$
 
-######Troubleshooting:
+######Troubleshooting\:
 	If the output looks like this:
 		{
 			"results": [],
