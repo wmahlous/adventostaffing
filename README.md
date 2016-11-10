@@ -64,9 +64,10 @@ This application is OS independent, as long as a Python interpreter is installed
 This application works with Python2.7+ and will not work with Python3+ due to various differences between the two, e.g. string representation and standard library/external APIs.
 
 **Python Packages:**
-After installing Python, verify that it is installed correctly and added to your PATH variable. An easy check to do is::
+After installing Python, verify that it is installed correctly and added to your PATH variable. An easy check to do is:
+    
     $ python --version
-	Python 2.7.12
+    Python 2.7.12
 
 Next, install the following packages:
 * lxml (http://lxml.de/)
@@ -86,7 +87,7 @@ To run the application, simply type:
 	$ python sainsburys_webpage_scraper.py
 in your console and the JSON string will be printed.
 
-To run the associated tests, make sure that "test_sainsburys_webpage_scraper.py" is in the same directory as "sainsburys_webpage_scraper.py" and then type:
+To run the associated tests, make sure that **"test_sainsburys_webpage_scraper.py"** is in the same directory as **"sainsburys_webpage_scraper.py"** and then type:
 
 		$ python test_sainsburys_webpage_scraper.py
 You will see something similar to this:
@@ -108,11 +109,10 @@ If the output looks like this:
 			"total": "0"
 		}
 and there are no error messages, that means that either:
-		1) There are no products listed on the webpage, nothing to worry about.
-		2) There are products listed but their details could not be retrieved. In this case there will definitely be error/warning messages displayed before the output.
+		* There are no products listed on the webpage, nothing to worry about.
+		* There are products listed but their details could not be retrieved. In this case there will definitely be error/warning messages displayed before the output.
 
-**Errors/Warning messages:**
-These would be in the format: 
+Errors/Warning messages are displayed in the following format:
 
     [{ERROR | WARNING} {FILENAME}: {LINE_NUMBER} - {FUNCTION_NAME}] MESSAGE
 		
@@ -134,7 +134,7 @@ This warning message means that details for a certain product were not retrieved
 			
             [ERROR    sainsburys_webpage_scraper.py:  46 - get_ripe_fruits_json     ] Connecting to "http://hiring-tests.s3-website-eu-west-1.amazonaws.com/2015_Developer_Scrape/5_products.html" failed with: HTTPConnectionPool(host='hiring-tests.s3-website-eu-west-1.amazonaws.com', port=80): Max retries exceeded with url: /2015_Developer_Scrape/5_products.html (Caused by NewConnectionError('<requests.packages.urllib3.connection.HTTPConnection object at 0x7fceeb66d750>: Failed to establish a new connection: [Errno 115] Operation now in progress',))
 
-This error message means that an HTTP request failed for some reason. The most common reason for this is timeout. Try increasing the value (seconds) of the TIMEOUT variable at the top of sainsburys_webpage_scraper.py (TIMEOUT = 5). If that doesn't work then try entering the link in your browser. If that still doesn;t work that means the link is broken.
+This error message means that an HTTP request failed for some reason. The most common reason for this is timeout. Try increasing the value (seconds) of the TIMEOUT variable at the top of sainsburys_webpage_scraper.py (TIMEOUT = 5). If that doesn't work then try entering the link in your browser. If that still doesn't work that means the link is broken.
 
 Note: The main URL is defined at the top of sainsburys_webpage_scraper.py (RIPE_FRUITS_URL = ...). If connection failed for this URL then the resulting JSON string will be empty as the main page is crucial. If connection failed for one of the embedded links (there will be one link per product) then the product will be skipped (and warning message issued as mentioned in previous point).
 
