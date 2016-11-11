@@ -199,7 +199,7 @@ def get_product_link_element(li):
 def get_product_additional_details_dict(product_page_content):
 	"""Returns a dictionary with additional details about the individual product.
 
-	While get_product_dict() retrieves any information directly from RIPE_FRUITS_URL, get_product_details_dict()
+	While get_product_dict() retrieves any information directly from RIPE_FRUITS_URL, get_product_additional_details_dict()
 	retrieves information by following the link embedded in RIPE_FRUITS_URL which leads to the product's actual page 
 	which holds more information.
 
